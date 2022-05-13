@@ -1,13 +1,18 @@
+* {
+    background-color: darkslategray;
+    color: white;
+}
 header {
     display: flex;
     flex-direction: row;
     justify-content: center;
 }
 main {
-    font-family: 'Times New Roman', Times, serif;
+    font-family: 'Macondo';
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 2rem;
 }
 
 h1 {
@@ -24,4 +29,43 @@ li {
     position: absolute;
     justify-content: center;
     font-size: small;
+}
+
+.hide {
+    display: none;
+}
+
+.header {
+    font-size: 3rem;
+    font-family: 'Macondo';
+}
+
+button {
+    background-color: brown;
+    width: 7rem;
+}
+
+#questions {
+    display: block;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.choices {
+    display: flex;
+    justify-content: center;
+    padding-top: 1rem;
+    padding-right: .5rem;
+    font-size: 5rem;
+}
+
+.timer-count {
+    margin: 1rem;
+    font-size: larger;
+}
+
+img {
+    width: 15rem;
+    padding: 1rem;
 }

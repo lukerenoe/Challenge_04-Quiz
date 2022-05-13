@@ -5,58 +5,37 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Macondo&family=Noto+Sans+JP:wght@100&family=Water+Brush&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <title>Document</title>
 </head>
-<header>
-    <div class="large font">QUIZ TIME!</div>
-    <button class="start-button">START</button>
-</header>
-<body>
-<main>
-    <div class="timer-count">
 
+<body>
+<header>
+    <div class="header">Monty Python Quiz</div>
+</header>
+
+<main>    
+    <img id="img" src="https://img.gifglobe.com/grabs/montypython/MontyPythonAndTheHolyGrail/gif/23jwvs9njyOv.gif" alt="A scene from Monty Python And The Holy Grail">
+    <button class="start-button">START</button>
+    <div class="timer-count">
+        <span id="timer-display">60</span>
     </div>
-    <!-- First Question -->
-    <h1 class="question1" > Question 1
-        <ol>
-            <li>Answer</li>
-            <li>Answer</li>
-            <li>Answer</li>
-            <li>Answer</li>
-        </ol>
-    </h1>
-    <!-- Second Question -->
-    <h1 class="question2">Question 2
-        <ol>
-            <li>Answer</li>
-            <li>Answer</li>
-            <li>Answer</li>
-            <li>Answer</li>
-        </ol>
-    </h1>
-    <!-- Third Question -->
-    <h1 class="question3">Question 3
-        <ol>
-            <li>Answer</li>
-            <li>Answer</li>
-            <li>Answer</li>
-            <li>Answer</li>
-        </ol>
-    </h1>
-    <!-- Fourth Question -->
-    <h1 class="question4">Question 4
-        <ol>
-            <li>Answer</li>
-            <li>Answer</li>
-            <li>Answer</li>
-            <li>Answer</li>
-        </ol>
-    </h1>
+    <div id="questions" class="hide">
+        <div id="question-title">
+
+        </div>
+        <div class="choices" id="question-choices">
+
+        </div>
+    </div>
     <br>
     <br>
-    <h2>Score <span class="score-counter"></span></h2>
-    
+    <h2> <span class="score-counter"></span></h2>
+    <div id="end-screen" class="hide">
+        END SCREEN
+    </div>
 </main>
-    <script> src= "style/script.js"</script>
+    <script src= "./style/script.js"> </script>
 </body>
 </html>
