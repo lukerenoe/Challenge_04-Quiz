@@ -23,14 +23,6 @@ h1 {
 
 }
 
-li {
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    justify-content: center;
-    font-size: small;
-}
-
 .hide {
     display: none;
 }

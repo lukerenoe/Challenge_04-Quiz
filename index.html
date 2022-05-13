@@ -22,7 +22,7 @@
         <span id="timer-display">60</span>
     </div>
     <div id="questions" class="hide">
-        <div id="question-title">
+        <div  id="question-title">
 
         </div>
         <div class="choices" id="question-choices">
@@ -33,7 +33,12 @@
     <br>
     <h2> <span class="score-counter"></span></h2>
     <div id="end-screen" class="hide">
-        END SCREEN
+        <h2>You're Finished!</h2> <p>Your score is <span id="final-score"></span>.</p>
+        <p>
+        Enter name: <input type="text" id="initials" max="3" />
+        <button id="submit">Submit</button>
+        </p>
+        <ul id="score-list"></ul>
     </div>
 </main>
     <script src= "./style/script.js"> </script>

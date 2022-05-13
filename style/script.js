@@ -34,6 +34,11 @@ var questionChoices = document.querySelector("#question-choices");
 var questionTitle = document.querySelector("#question-title");
 var endScreen = document.querySelector("#end-screen");
 var timerDisplay = document.querySelector("#timer-display");
+var finalScore = document.querySelector("#final-score");
+var initials = document.querySelector("#initials");
+var submit = document.querySelector("#submit");
+var scoreList = document.querySelector("#score-list");
+
 
 var questionIndex = 0;
 var timeState;
@@ -55,13 +60,12 @@ function startTimer() {
             clearInterval(timeState);
         }
     }, 1000);
-    
 }
+
 function displayQuestions() {
     questionsDiv.removeAttribute("class");
     var currentQuestion = codequestions [questionIndex];
     questionTitle.textContent = currentQuestion.title;
-    
     questionChoices.innerHTML = ""
     currentQuestion.choices.forEach(function(choice){
         var newBtn = document.createElement("button");
@@ -84,7 +88,38 @@ function checkAnswer() {
         timerDisplay.textContent = timerCount;
     }
     questionIndex++;
-    displayQuestions()
+    if (questionIndex === codequestions.length) {
+        endGame()
+    }
+    else {displayQuestions()}
 }
+function endGame() {
+    endScreen.removeAttribute("class")
+    clearInterval(timeState);
+        questionTitle.setAttribute("class", "hide")
+        questionChoices.setAttribute("class", "hide")
+        finalScore.textContent = timerCount
+}
+
+function saveScore() {
+var scoreArray = JSON.parse (localStorage.getItem ("high-scores") ) || []
+var newScore = {
+    score: timerCount, 
+    name: initials.value}
+scoreArray.push(newScore)
+localStorage.setItem("high-scores", JSON.stringify(scoreArray))
+displayScores()
+}
+
+function displayScores() {
+var scoreArray = JSON.parse (localStorage.getItem ("high-scores") ) || []
+    scoreArray.forEach(function(newScore){
+        var scoreItem = document.createElement("li")
+        scoreItem.textContent = newScore.name + ": " + newScore.score
+        scoreList.appendChild(scoreItem)
+    })
+}
+
+submit.addEventListener("click", saveScore);
 
 startButton.addEventListener("click", startQuiz);
